@@ -20,6 +20,7 @@ h2{
 }
 
 body{
-    background: url(bunga2.png);
+    background: url(tree1.png), url(field1.jpg);
+    background-repeat: no-repeat, repeat;
     color: white;
 }
