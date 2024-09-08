@@ -5,16 +5,50 @@ html, body{
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ddd;
+    background-color: #000;
     line-height: 1.65;
     padding-bottom: 1000px;
 }
 
 .container-satu{
-    width: 800px;
+    border-style: outset;
+    border-color: white;
+    width: 80%;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #232231;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+}
+
+.kolom-utama{
+    color: white;
+    padding: 15px;
+    order: 2;
+}
+
+.sidebar-satu{
+    color: white;
+    width: 500px;
+    padding: 20px;
+    order: 1;
+    text-align: center;
+}
+
+.sidebar-satu ul{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-satu ul li a{
+    color: greenyellow;
+}
+
+.sidebar-dua{
+    color: white;
+    width: 500px;
+    padding: 20px;
+    order: 3;
 }
