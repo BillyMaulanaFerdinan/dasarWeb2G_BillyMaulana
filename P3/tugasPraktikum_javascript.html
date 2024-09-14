@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Membuat form</title>
+        <script>
+            function validateForm() {
+                
+                var genderChecked = document.querySelectorAll('input[name="var4"]:checked').length > 0;
+                var hobbyChecked = document.querySelectorAll('input[name^="hobby"]:checked').length > 0;
+                var jobChecked = document.querySelectorAll('input[name^="kerja"]:checked').length > 0;
+                var confirmChecked = document.querySelector('input[name="check"]:checked') !== null;
+
+                
+                if (!genderChecked) {
+                    alert("Anda harus memilih jenis kelamin.");
+                    return false; 
+                }
+
+                if (!hobbyChecked) {
+                    alert("Anda harus memilih minimal satu hobby.");
+                    return false; 
+                }
+
+                if (!jobChecked) {
+                    alert("Anda harus memilih minimal satu pekerjaan.");
+                    return false; 
+                }
+
+                
+                if (!confirmChecked) {
+                    alert("Anda harus mengonfirmasi pengisian.");
+                    return false;
+                } else {
+                    alert("Terima kasih sudah mengisi form! :)");
+                    return true;
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <form method="get" onsubmit="return validateForm()">
+            <h4>FORM</h4>
+            <b>Nama</b>
+            <br>
+            <input type="text" name="var1" SIZE="30"><br>
+            <b>Alamat</b>
+            <br>
+            <input type="text" name="var1" SIZE="30"><br>
+            <b>Tanggal lahir</b>
+            <br>
+            <input type="text" name="var1" SIZE="30">
+            <br><br>
+            <b>Jenis Kelamin</b>
+            <br>
+            <input type="checkbox" name="var4" value="r1">Laki-laki <br>
+            <input type="checkbox" name="var4" value="r2">Wanita <br><br>
+            <b>Hobby</b><br>
+            <input type="checkbox" name="hobby1" value="Renang">Berenang<br>
+            <input type="checkbox" name="hobby2" value="Lari">Berlari<br>
+            <input type="checkbox" name="hobby3" value="hobetc">Lain-lain<br><br>
+            <b>Pekerjaan</b><br>
+            <input type="checkbox" name="kerja1" value="Swasta">Swasta<br>
+            <input type="checkbox" name="kerja2" value="Pns">PNS<br>
+            <input type="checkbox" name="kerja3" value="kerjaetc">Lain-lain<br><br>
+            <b>Check jika anda ingin mengirimkan ini</b><br>
+            <input type="checkbox" name="check" value="check"><br><br>
+            <input type="submit" name="var5" value="Cek!">
+        </form>
+    </body>
+</html>
