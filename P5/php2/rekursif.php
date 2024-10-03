@@ -1,11 +1,34 @@
 <?php
-function tampilAngka(int $jumlah, int $indeks = 1) {
-    echo "Perulangan ke-{$indeks} <br>";
+$menu = [
+    ["nama" => "Beranda"],
+    [
+      "nama" => "Berita",
+      "subMenu" => [
+        [
+          "nama" => "Wisata",
+          "subMenu" => [
+            ["nama" => "Pantai"],
+            ["nama" => "Gunung"],
+          ]
+        ],
+        ["nama" => "Kuliner"],
+        ["nama" => "Hiburan"],
+      ]
+    ],
+    ["nama" => "Tentang"],
+    ["nama" => "Kontak"],
+  ];
 
-    // Panggil diri sendiri selama $indeks <= jumlah
-    if ($indeks < $jumlah) {
-        tampilAngka($jumlah, $indeks + 1);
+  function tampilkanMenuBertingkat(array $menu) {
+    echo "<ul>";
+    foreach ($menu as $item) {
+      echo "<li>{$item['nama']}</li>";
+      if (isset($item['subMenu']) && is_array($item['subMenu'])) {
+        tampilkanMenuBertingkat($item['subMenu']);
+        }
     }
-}
-tampilAngka(20);
+    echo "</ul>";
+  }
+
+  tampilkanMenuBertingkat($menu);
 ?>
