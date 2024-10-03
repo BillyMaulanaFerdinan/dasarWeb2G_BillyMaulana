@@ -1,19 +1,9 @@
 <?php
 // Membuat fungsi
-function perkenalan($nama, $salam="Assalamualaikum") {
-    echo $salam.", ";
-    echo "Perkenalkan, nama saya ".$nama."<br/>";
-    echo "Senang berkenalan dengan anda<br/>";
+function hitungUmur($thn_lahir, $thn_sekarang) {
+    $umur = $thn_sekarang - $thn_lahir;
+    return $umur;
 }
 
-// Memanggil fungsi yang sudah dibuat
-perkenalan("Billy","Hallo");
-
-echo "<hr>";
-
-$saya = "Billy";
-$ucapanSalam = "Selamat pagi";
-
-// Memanggil lagi tanpa mengisi parameter salam
-perkenalan($saya);
+echo "Umur saya adalah ". hitungUmur(2003, 2024) ." tahun"
 ?>
